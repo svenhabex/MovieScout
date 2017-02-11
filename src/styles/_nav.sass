@@ -1,0 +1,60 @@
+nav
+ display: flex
+ align-items: center
+ position: fixed
+ height: 70px
+ top: 0
+ left: 0
+ right: 0
+ background-color: #161616
+
+ .logo
+   flex: 4
+   margin-left: 20px
+
+   img
+     width: 200px
+     height: auto
+
+ .menu
+   list-style-type: none
+   display: flex
+   margin: 0
+   padding: 0
+   flex: 2
+   li
+     flex: 1
+     a
+       text-decoration: none
+       padding-top: 25px
+       padding-bottom: 25px
+       display: flex
+       justify-content: center
+       width: 100%
+       text-align: center
+       transition: background-color 0.2s ease-in-out
+       color: white
+       position: relative
+
+       &:hover
+         color: white
+
+       &:after
+         content: ""
+         height: 4px
+         background-color: #54BA5D
+         position: absolute
+         border-radius: 3px
+         bottom: 0
+         left: 0
+         width: 0px
+         width: 100%
+         transition: opacity 0.15s ease-in-out
+         opacity: 0
+
+       &:hover:after
+        opacity: 1
+
+
+       &:visited
+         color: white
