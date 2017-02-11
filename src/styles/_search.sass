@@ -1,0 +1,35 @@
+.search
+  margin-top: 70px
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 100%
+  background-color: #54BA5D
+  padding: 10px 0
+  position: relative
+
+  span
+    margin-right: 5px
+    .search-icon
+      height: 27px
+      width: 27px
+
+  input
+    border: none
+    width: 960px
+    background-color: #77c67b
+    color: white
+    transition: all 0.2s ease-in-out
+    border-radius: 3px
+    padding: 8px 8px
+    margin-right: 5px
+    &::placeholder
+      color: #ededed
+
+    &:focus
+      outline: none
+      background-color: rgba(255,255,255,.92)
+      color: rgba(0,0,0,.78)
+      box-shadow: 0 2px 5px rgba(0,0,0,.26)
+      &::placeholder
+        color: #8e8e8e
