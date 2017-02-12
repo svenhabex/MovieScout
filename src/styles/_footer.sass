@@ -17,6 +17,7 @@ footer
     flex-grow: 1
     display: flex
     justify-content: center
+    margin: 0 10px
     img
       width: 200px
       height: auto
@@ -24,9 +25,35 @@ footer
   .footer-info
     flex-grow: 1
     display: flex
-    justify-content: center
+    align-items: center
+    flex-direction: column
+    margin: 0 10px
+
+    .name
+      display: flex
+      align-items: center
+      flex-grow: 1
+
+    .social
+      flex-grow: 1
+      display: flex
+      align-items: center
+      a
+        svg
+          width: 30px
+          height: 30px
 
   .legal
     flex-grow: 1
     display: flex
     justify-content: center
+    align-items: center
+    margin: 0 10px
+
+    a
+      color: white
+      text-decoration: none
+      padding-left: 4px
+
+      &:hover
+        color: #54BA5D
