@@ -10,6 +10,7 @@ import { MoviesService } from "../movies.service";
 })
 export class MovieDetailComponent implements OnInit {
   movie: Object;
+  cast: Array<Object>;
 
   constructor(private route: ActivatedRoute, private moviesService: MoviesService) { }
 
@@ -18,7 +19,7 @@ export class MovieDetailComponent implements OnInit {
     this.route.params.subscribe(params => {
       const id = params['id'];
       this.moviesService.getMovieDetail(id).subscribe(data => this.movie = data);
-      this.moviesService.getMovieDetail(id).subscribe(data => console.log(data));
+      this.moviesService.getMovieCredits(id).subscribe(data => this.cast = data.cast.slice(0,6));
     });
   }
 
