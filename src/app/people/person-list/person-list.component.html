@@ -1,17 +1,18 @@
-<h2>{{title}}</h2>
-<ul class="list">
-  <li *ngFor="let person of people" class="card">
-    <a href="">
-      <div class="card-content">
-        <img src="https://image.tmdb.org/t/p/w300/{{person.profile_path}}" *ngIf="person.profile_path">
-        <img src="assets/img/abstract-image.jpg" *ngIf="!person.profile_path">
-        <div class="overlay">
-          <div class="card-info">
-            <p class="title">{{person.name}}</p>
+<div class="container">
+  <h2>{{title}}</h2>
+  <ul class="list">
+    <li *ngFor="let person of people" class="card">
+      <a href="">
+        <div class="card-content">
+          <img src="https://image.tmdb.org/t/p/w300/{{person.profile_path}}" *ngIf="person.profile_path">
+          <img src="assets/img/abstract-image.jpg" *ngIf="!person.profile_path">
+          <div class="overlay">
+            <div class="card-info">
+              <p class="title">{{person.name}}</p>
+            </div>
           </div>
         </div>
-      </div>
-    </a>
-
-  </li>
-</ul>
+      </a>
+    </li>
+  </ul>
+</div>

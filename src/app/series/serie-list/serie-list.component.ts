@@ -23,7 +23,7 @@ export class SerieListComponent implements OnInit {
 
   getPopular(){
     this.seriesService.getPopular().subscribe((data) => this.series = data.results);
-    this.title = "Popular movies";
+    this.title = "Popular series";
     this.categorie = "popular";
   }
 
