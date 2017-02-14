@@ -46,4 +46,28 @@ export class MoviesService {
       .map((res: Response) => res.json());
   }
 
+  getMovieKeywords(id){
+    let url = 'https://api.themoviedb.org/3/movie/' + id +'/keywords?api_key=' + this.apiKey + '&language=en-US&page=1'
+    return this.http.get(url)
+      .map((res: Response) => res.json());
+  }
+
+  getMovieImages(id){
+    let url = 'https://api.themoviedb.org/3/movie/' + id +'/images?api_key=' + this.apiKey
+    return this.http.get(url)
+      .map((res: Response) => res.json());
+  }
+
+  getMovieVideos(id){
+    let url = 'https://api.themoviedb.org/3/movie/' + id +'/videos?api_key=' + this.apiKey
+    return this.http.get(url)
+      .map((res: Response) => res.json());
+  }
+
+  getSimilarMovies(id){
+    let url = 'https://api.themoviedb.org/3/movie/' + id +'/similar?api_key=' + this.apiKey
+    return this.http.get(url)
+      .map((res: Response) => res.json());
+  }
+
 }
