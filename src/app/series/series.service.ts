@@ -28,4 +28,34 @@ export class SeriesService {
       .map((res: Response) => res.json());
   }
 
+  getSerieDetail(id){
+    let url = 'https://api.themoviedb.org/3/tv/' + id +'?api_key=' + this.apiKey + '&language=en-US&page=1'
+    return this.http.get(url)
+      .map((res: Response) => res.json());
+  }
+
+  getSerieCredits(id){
+    let url = 'https://api.themoviedb.org/3/tv/' + id +'/credits?api_key=' + this.apiKey + '&language=en-US&page=1'
+    return this.http.get(url)
+      .map((res: Response) => res.json());
+  }
+
+  getSerieKeywords(id){
+    let url = 'https://api.themoviedb.org/3/tv/' + id +'/keywords?api_key=' + this.apiKey + '&language=en-US&page=1'
+    return this.http.get(url)
+      .map((res: Response) => res.json());
+  }
+
+  getSerieImages(id){
+    let url = 'https://api.themoviedb.org/3/tv/' + id +'/images?api_key=' + this.apiKey
+    return this.http.get(url)
+      .map((res: Response) => res.json());
+  }
+
+  getSimilarSeries(id){
+    let url = 'https://api.themoviedb.org/3/tv/' + id +'/similar?api_key=' + this.apiKey
+    return this.http.get(url)
+      .map((res: Response) => res.json());
+  }
+
 }

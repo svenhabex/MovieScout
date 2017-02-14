@@ -1,5 +1,5 @@
 <div *ngIf="movie">
-  <div class="movie-header" [ngStyle]="{'background-image': 'url(https://image.tmdb.org/t/p/w1920/' + movie.backdrop_path + ')'}">
+  <div class="film-header" [ngStyle]="{'background-image': 'url(https://image.tmdb.org/t/p/w1920/' + movie.backdrop_path + ')'}">
     <div class="overlay"></div>
     <div class="header-content">
       <div class="poster">
@@ -41,9 +41,9 @@
         </li>
       </ul>
     </section>
-    <section class="movie-details">
+    <section class="film-details">
       <h3>Movie Details</h3>
-      <div class="movie-details-content">
+      <div class="film-details-content">
         <div class="facts">
           <div class="item">
             <p class="item-title">Status</p>

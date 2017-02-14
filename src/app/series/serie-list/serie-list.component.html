@@ -7,7 +7,7 @@
   <h2>{{title}}</h2>
   <ul class="list">
     <li *ngFor="let serie of series" class="card">
-      <a href="">
+      <a routerLink="/serie/{{serie.id}}">
         <div class="card-content">
           <img src="https://image.tmdb.org/t/p/w300/{{serie.poster_path}}" *ngIf="serie.poster_path">
           <img src="assets/img/abstract-image.jpg" *ngIf="!serie.poster_path">
