@@ -1,3 +1,38 @@
-<p>
-  person-detail works!
-</p>
+<div class="person-content" *ngIf="person && image">
+  <div class="person-header" [ngStyle]="{'background-image': 'url(https://image.tmdb.org/t/p/w1920/' + image.file_path + ')'}">
+    <div class="overlay"></div>
+    <div class="header-content">
+      <div class="picture">
+        <img src="https://image.tmdb.org/t/p/w300/{{person.profile_path}}" alt="profile picture" class="profile-picture">
+      </div>
+      <div class="info">
+        <h3 class="name">{{person.name}}</h3>
+        <p class="born">Born on {{person.birthday | date:'dd/MM/yyyy'}} in {{person.place_of_birth}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <section class="bio">
+      <h3>Biography</h3>
+      <div class="biography">
+        {{person.biography}}
+      </div>
+    </section>
+    <section class="known-for">
+      <h3>Known for</h3>
+      <ul>
+        <li *ngFor="let film of cast">
+          <a routerLink="/{{film.media_type}}/{{film.id}}">
+            <div class="card-content">
+              <img src="https://image.tmdb.org/t/p/w300/{{film.poster_path}}" alt="film poster" *ngIf="film.poster_path">
+              <img src="../../../assets/img/film_default.jpg" alt="film poster" *ngIf="!film.poster_path">
+              <div class="overlay">
+                <p class="film-title">{{film.title}}</p>
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </div>
+</div>

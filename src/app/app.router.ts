@@ -14,7 +14,7 @@ export const router: Routes = [
   { path: 'movies', component: MovieListComponent },
   { path: 'movie/:id', component: MovieDetailComponent },
   { path: 'series', component: SerieListComponent },
-  { path: 'serie/:id', component: SerieDetailComponent },
+  { path: 'tv/:id', component: SerieDetailComponent },
   { path: 'people', component: PersonListComponent },
   { path: 'person/:id', component: PersonDetailComponent }
 ];
