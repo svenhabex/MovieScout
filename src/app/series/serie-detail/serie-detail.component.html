@@ -30,7 +30,8 @@
         <li *ngFor="let actor of cast" class="actor">
           <a routerLink="/person/{{actor.id}}">
             <div class="card-content">
-              <img src="https://image.tmdb.org/t/p/w300/{{actor.profile_path}}" alt="">
+              <img src="https://image.tmdb.org/t/p/w300/{{actor.profile_path}}" alt="profile picture" *ngIf="actor.profile_path">
+              <img src="assets/img/person_default.jpg" *ngIf="!actor.profile_path">
               <div class="overlay">
                 <div class="actor-info">
                   <p class="actor-name">{{actor.name}}</p>
@@ -104,7 +105,8 @@
       <ul class="similars-list">
         <li *ngFor="let similar of similars" class="similar">
           <a routerLink="/tv/{{similar.id}}">
-            <img src="https://image.tmdb.org/t/p/w300/{{similar.poster_path}}" alt="serie poster">
+            <img src="https://image.tmdb.org/t/p/w300/{{similar.poster_path}}" alt="serie poster" *ngIf="similar.poster_path">
+            <img src="assets/img/film_default.jpg" *ngIf="!similar.poster_path">
           </a>
         </li>
       </ul>

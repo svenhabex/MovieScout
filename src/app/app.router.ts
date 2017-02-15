@@ -10,7 +10,7 @@ import { SerieDetailComponent } from "./series/serie-detail/serie-detail.compone
 import { PersonDetailComponent } from "./people/person-detail/person-detail.component";
 
 export const router: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: MovieListComponent },
   { path: 'movies', component: MovieListComponent },
   { path: 'movie/:id', component: MovieDetailComponent },
   { path: 'series', component: SerieListComponent },

@@ -24,7 +24,9 @@ export class SearchComponent implements OnInit {
     if(this.query){
       this.searchService.multiSearch(this.query).subscribe((data) => this.results = data.results);
       const results = <HTMLElement> this.searchElem.querySelector(".results");
-      if (results) results.style.display = "block";
+      if (results){
+        results.style.display = "block";
+      }
     }else{
       const results = <HTMLElement> this.searchElem.querySelector(".results");
       results.style.display = "none";

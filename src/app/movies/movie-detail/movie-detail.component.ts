@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { MoviesService } from "../movies.service";
 import { DomSanitizer } from '@angular/platform-browser';
 
@@ -17,7 +17,7 @@ export class MovieDetailComponent implements OnInit {
   video: Object;
   similars: Array<Object>;
 
-  constructor(private route: ActivatedRoute, private moviesService: MoviesService, private sanitizer: DomSanitizer) { }
+  constructor(private route: ActivatedRoute, private moviesService: MoviesService, private sanitizer: DomSanitizer, private router: Router) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
@@ -33,6 +33,13 @@ export class MovieDetailComponent implements OnInit {
         }
       });
       this.moviesService.getSimilarMovies(id).subscribe(data => this.similars = data.results.slice(0,6));
+    });
+
+    this.router.events.subscribe((evt) => {
+      if (!(evt instanceof NavigationEnd)) {
+          return;
+      }
+      document.body.scrollTop = 0;
     });
   }
 

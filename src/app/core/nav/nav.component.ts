@@ -12,6 +12,10 @@ export class NavComponent implements OnInit {
   ngOnInit() {
   }
 
+  toggleOpen(e){
+    const menu = <HTMLElement> document.querySelector(".menu");
+    menu.classList.toggle('open');
+  }
 
 
 }
