@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router, NavigationEnd} from '@angular/router';
 import { SeriesService } from "../series.service";
 
 @Component({
@@ -15,7 +15,7 @@ export class SerieDetailComponent implements OnInit {
   images: Array<Object>;
   similars: Array<Object>;
 
-  constructor(private route: ActivatedRoute, private seriesService: SeriesService) { }
+  constructor(private route: ActivatedRoute, private seriesService: SeriesService, private router: Router) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
@@ -25,6 +25,13 @@ export class SerieDetailComponent implements OnInit {
       this.seriesService.getSerieKeywords(id).subscribe(data => this.keywords = data.results.slice(0,25));
       this.seriesService.getSerieImages(id).subscribe(data => this.images = data.backdrops.slice(1,6));
       this.seriesService.getSimilarSeries(id).subscribe(data => this.similars = data.results.slice(0,6));
+    });
+
+    this.router.events.subscribe((evt) => {
+      if (!(evt instanceof NavigationEnd)) {
+          return;
+      }
+      document.body.scrollTop = 0;
     });
 
   }
