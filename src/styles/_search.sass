@@ -33,3 +33,63 @@
       box-shadow: 0 2px 5px rgba(0,0,0,.26)
       &::placeholder
         color: #8e8e8e
+
+  .results
+    max-width: 960px
+    background: white
+    box-shadow: 0 2px 5px rgba(0,0,0,.26)
+    border-radius: 0px 0px 3px 3px
+    position: absolute
+    z-index: 3
+    top: 54px
+    left: 0
+    right: 0
+    margin: 0 auto
+    padding: 10px 20px
+    max-height: 450px
+    overflow-y: scroll
+
+    .results-list
+      list-style-type: none
+      padding: 0
+      margin: 0
+
+      .result-card
+        margin: 0
+        border-bottom: 1px solid #e8e8e8
+
+      .result-card a
+        display: flex
+        justify-content: space-between
+        align-items: center
+        text-decoration: none
+        color: rgba(0,0,0,.78)
+        padding: 10px 0px
+
+        &:hover
+          color: rgba(0,0,0,.78)
+        &:visited
+          color: rgba(0,0,0,.78)
+
+        .info
+          flex-grow: 1
+          display: flex
+          align-items: center
+
+          .poster
+            width: 40px
+            height: 60px
+            border-radius: 3px
+
+            img
+              width: 40px
+              height: 60px
+              border-radius: 3px
+
+          .name
+            margin-left: 10px
+
+        .type
+          padding: 3px 6px
+          background-color: #e8e8e8
+          border-radius: 3px

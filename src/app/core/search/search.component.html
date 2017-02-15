@@ -5,4 +5,46 @@
 		</svg>
   </span>
   <input type="text" name="search" placeholder="Search for movies, series and actors" (keyup)="search($event)">
+  <div class="results" *ngIf="results">
+    <ul class="results-list">
+      <li *ngFor="let result of results">
+        <div class="movie result-card" *ngIf="result.media_type === 'movie'">
+          <a routerLink="/movie/{{result.id}}">
+            <div class="info">
+              <div class="poster">
+                <img src="https://image.tmdb.org/t/p/w300/{{result.poster_path}}" *ngIf="result.poster_path">
+                <img src="../../../assets/img/film_default.jpg" *ngIf="!result.poster_path">
+              </div>
+              <div class="name">{{result.title}}</div>
+            </div>
+            <div class="type">Movie</div>
+          </a>
+        </div>
+        <div class="serie result-card" *ngIf="result.media_type === 'tv'">
+          <a routerLink="/tv/{{result.id}}">
+            <div class="info">
+              <div class="poster">
+                <img src="https://image.tmdb.org/t/p/w300/{{result.poster_path}}" *ngIf="result.poster_path">
+                <img src="../../../assets/img/film_default.jpg" *ngIf="!result.poster_path">
+              </div>
+              <div class="name">{{result.name}}</div>
+            </div>
+            <div class="type">TV</div>
+          </a>
+        </div>
+        <div class="person result-card" *ngIf="result.media_type === 'person'">
+          <a routerLink="/person/{{result.id}}">
+            <div class="info">
+              <div class="poster">
+                <img src="https://image.tmdb.org/t/p/w300/{{result.profile_path}}" *ngIf="result.profile_path">
+                <img src="../../../assets/img/person_default.jpg" *ngIf="!result.profile_path">
+              </div>
+              <div class="name">{{result.name}}</div>
+            </div>
+            <div class="type">Person</div>
+          </a>
+        </div>
+      </li>
+    </ul>
+  </div>
 </form>

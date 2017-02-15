@@ -8,6 +8,7 @@ import { SearchService } from "./search.service";
   providers: [ SearchService ]
 })
 export class SearchComponent implements OnInit {
+  results: Array<Object>;
 
   constructor(private searchService: SearchService) { }
 
@@ -15,7 +16,7 @@ export class SearchComponent implements OnInit {
   }
 
   search(e){
-    this.searchService.multiSearch(e.target.value).subscribe((data) => console.log(data));
+    this.searchService.multiSearch(e.target.value).subscribe((data) => this.results = data.results);
 
   }
 
