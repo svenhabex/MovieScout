@@ -9,15 +9,32 @@ import { SearchService } from "./search.service";
 })
 export class SearchComponent implements OnInit {
   results: Array<Object>;
+  searchElem;
+  query: String;
 
-  constructor(private searchService: SearchService) { }
+  constructor(private searchService: SearchService) {
+    this.query = "";
+  }
 
   ngOnInit() {
+    this.searchElem = <HTMLElement> document.querySelector(".search");
   }
 
   search(e){
-    this.searchService.multiSearch(e.target.value).subscribe((data) => this.results = data.results);
+    if(this.query){
+      this.searchService.multiSearch(this.query).subscribe((data) => this.results = data.results);
+      const results = <HTMLElement> this.searchElem.querySelector(".results");
+      if (results) results.style.display = "block";
+    }else{
+      const results = <HTMLElement> this.searchElem.querySelector(".results");
+      results.style.display = "none";
+    }
+  }
 
+  close(e){
+    const results = <HTMLElement> this.searchElem.querySelector(".results");
+    this.query = "";
+    results.style.display = "none";
   }
 
 }
