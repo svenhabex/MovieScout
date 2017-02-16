@@ -5,7 +5,7 @@
       <a routerLink="/person/{{person.id}}">
         <div class="card-content">
           <img src="https://image.tmdb.org/t/p/w300/{{person.profile_path}}" *ngIf="person.profile_path">
-          <img src="assets/img/person_default.jpg" *ngIf="!person.profile_path">
+          <img src="./assets/img/person_default.jpg" *ngIf="!person.profile_path">
           <div class="overlay">
             <div class="card-info">
               <p class="title">{{person.name}}</p>

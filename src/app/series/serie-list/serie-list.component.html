@@ -10,7 +10,7 @@
       <a routerLink="/tv/{{serie.id}}">
         <div class="card-content">
           <img src="https://image.tmdb.org/t/p/w300/{{serie.poster_path}}" *ngIf="serie.poster_path">
-          <img src="assets/img/film_default.jpg" *ngIf="!serie.poster_path">
+          <img src="./assets/img/film_default.jpg" *ngIf="!serie.poster_path">
           <div class="overlay">
             <div class="card-info">
               <div class="rating">

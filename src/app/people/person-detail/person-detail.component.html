@@ -25,9 +25,9 @@
           <a routerLink="/{{film.media_type}}/{{film.id}}">
             <div class="card-content">
               <img src="https://image.tmdb.org/t/p/w300/{{film.poster_path}}" alt="film poster" *ngIf="film.poster_path">
-              <img src="../../../assets/img/film_default.jpg" alt="film poster" *ngIf="!film.poster_path">
+              <img src="./assets/img/film_default.jpg" alt="film poster" *ngIf="!film.poster_path">
               <div class="overlay">
-                <p class="film-title">{{film.title}}</p>
+                <p class="film-title">{{film.title || film.name}}</p>
               </div>
             </div>
           </a>
